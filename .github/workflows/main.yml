@@ -16,9 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set execute permission for script
-        run: chmod +x ./001_variables.sh
+      - name: Set execute permission for script & Run the script
+        run: |
+        chmod +x ./001_variables.sh
+        ./001_variables.sh
 
-      - name: Run the script
-        run: ./001_variables.sh
 
