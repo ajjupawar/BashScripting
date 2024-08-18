@@ -1,7 +1,10 @@
-name: Run bash script 001 Test
+name: Run Bash Script
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -13,5 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run existing Bash script
-        run: ./001_variables.sh 
+      - name: Set execute permission for script
+        run: chmod +x ./001_variables.sh
+
+      - name: Run the script
+        run: ./001_variables.sh
+
